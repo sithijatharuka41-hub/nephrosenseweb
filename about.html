@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NephroSense | About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .team-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      border: 3px solid var(--green-primary);
+      cursor: pointer;
+      background: var(--gray-100);
+    }
+    .team-role {
+      font-size: 0.85rem;
+      color: var(--green-primary);
+      font-weight: 600;
+      margin: 0.25rem 0;
+    }
+    .team-email {
+      font-size: 0.7rem;
+      color: var(--gray-500);
+      word-break: break-all;
+    }
+    .institution-info {
+      background: var(--green-light);
+      padding: 1.5rem;
+      border-radius: 20px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">N</div>
+    <div class="logo-text">Nephro<span>Sense</span></div>
+  </a>
+  <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="domain.html">Domain</a></li>
+    <li><a href="milestones.html">Milestones</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="presentations.html">Presentations</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section style="padding-top: 100px;">
+    <div class="container">
+      <div class="section-label">The Team</div>
+      <h1 class="section-title">About Us</h1>
+      <p class="section-desc">Meet the research team behind NephroSense — AI-Powered Chronic Kidney Disease Management System.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-card">
+          <img class="team-photo" id="photo0" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23e8f5e9'/%3E%3Ctext x='60' y='70' text-anchor='middle' fill='%230f7b3a' font-size='40'%3E👤%3C/text%3E%3C/svg%3E" onclick="document.getElementById('file0').click()">
+          <input type="file" id="file0" style="display:none" accept="image/*" onchange="previewPhoto(event,0)">
+          <h3>Sithija Ranathunga</h3>
+          <div class="team-role">Lifestyle Prediction & ML Lead</div>
+          <div class="team-email">sithijatharuka41@gmail.com</div>
+          <div style="margin-top: 0.5rem;"><span class="accuracy-badge">IT22005144</span><span class="accuracy-badge">Random Forest</span><span class="accuracy-badge">XGBoost</span></div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card">
+          <img class="team-photo" id="photo1" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23e8f5e9'/%3E%3Ctext x='60' y='70' text-anchor='middle' fill='%230f7b3a' font-size='40'%3E👤%3C/text%3E%3C/svg%3E" onclick="document.getElementById('file1').click()">
+          <input type="file" id="file1" style="display:none" accept="image/*" onchange="previewPhoto(event,1)">
+          <h3>Ashini Madinu</h3>
+          <div class="team-role">Urine Strip Analysis & YOLO</div>
+          <div class="team-email">ashinimadinu02@gmail.com</div>
+          <div style="margin-top: 0.5rem;"><span class="accuracy-badge">IT22306418</span><span class="accuracy-badge">YOLOv8</span><span class="accuracy-badge">Dual-CNN</span></div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card">
+          <img class="team-photo" id="photo2" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23e8f5e9'/%3E%3Ctext x='60' y='70' text-anchor='middle' fill='%230f7b3a' font-size='40'%3E👤%3C/text%3E%3C/svg%3E" onclick="document.getElementById('file2').click()">
+          <input type="file" id="file2" style="display:none" accept="image/*" onchange="previewPhoto(event,2)">
+          <h3>Harsha Shehani</h3>
+          <div class="team-role">Ultrasound Analysis & U-Net</div>
+          <div class="team-email">harshashehani2001@gmail.com</div>
+          <div style="margin-top: 0.5rem;"><span class="accuracy-badge">IT22913210</span><span class="accuracy-badge">U-Net</span><span class="accuracy-badge">Cortex Thickness</span></div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card">
+          <img class="team-photo" id="photo3" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23e8f5e9'/%3E%3Ctext x='60' y='70' text-anchor='middle' fill='%230f7b3a' font-size='40'%3E👤%3C/text%3E%3C/svg%3E" onclick="document.getElementById('file3').click()">
+          <input type="file" id="file3" style="display:none" accept="image/*" onchange="previewPhoto(event,3)">
+          <h3>Nirasha Roshali</h3>
+          <div class="team-role">Donor Matching & ML</div>
+          <div class="team-email">nirasharosh@gmail.com</div>
+          <div style="margin-top: 0.5rem;"><span class="accuracy-badge">IT22886354</span><span class="accuracy-badge">Random Forest</span><span class="accuracy-badge">SHAP</span></div>
+        </div>
+
+        <!-- Supervisor -->
+        <div class="team-card">
+          <img class="team-photo" id="photo4" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23e8f5e9'/%3E%3Ctext x='60' y='70' text-anchor='middle' fill='%230f7b3a' font-size='40'%3E👤%3C/text%3E%3C/svg%3E" onclick="document.getElementById('file4').click()">
+          <input type="file" id="file4" style="display:none" accept="image/*" onchange="previewPhoto(event,4)">
+          <h3>Dr. Dinuka Wijendra</h3>
+          <div class="team-role">Research Supervisor</div>
+          <div class="team-email">dinuka.w@slit.lk</div>
+          <div style="margin-top: 0.5rem;"><span class="accuracy-badge">Principal Investigator</span></div>
+        </div>
+
+        <!-- Co-Supervisor -->
+        <div class="team-card">
+          <img class="team-photo" id="photo5" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23e8f5e9'/%3E%3Ctext x='60' y='70' text-anchor='middle' fill='%230f7b3a' font-size='40'%3E👤%3C/text%3E%3C/svg%3E" onclick="document.getElementById('file5').click()">
+          <input type="file" id="file5" style="display:none" accept="image/*" onchange="previewPhoto(event,5)">
+          <h3>Ms. Jenny Krishara</h3>
+          <div class="team-role">Co-Supervisor</div>
+          <div class="team-email">jenny.k@slit.lk</div>
+          <div style="margin-top: 0.5rem;"><span class="accuracy-badge">Research Guidance</span></div>
+        </div>
+      </div>
+
+      <div class="institution-info">
+        <i class="fas fa-university" style="font-size: 1.5rem; color: var(--green-primary); margin-bottom: 0.5rem; display: block;"></i>
+        <strong>Sri Lanka Institute of Information Technology (SLIIT)</strong><br>
+        Faculty of Computing · Bachelor of Science (Hons) in Information Technology<br>
+        New Kandy Road, Malabe, Sri Lanka<br>
+        <span class="accuracy-badge" style="margin-top: 0.5rem;">Centre of Excellence for AI (CoEAI)</span>
+      </div>
+
+      <div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--gray-500);">
+        <i class="fas fa-upload"></i> Click any profile photo to upload actual team image (preview stored locally).
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 NephroSense Research Group | Sri Lanka Institute of Information Technology | Faculty of Computing</p>
+  <p style="margin-top: 0.5rem;">Domain | Milestones | Documents | Presentations | About Us | Contact Us</p>
+</footer>
+
+<script>
+  function previewPhoto(event, idx) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = e => { document.getElementById('photo'+idx).src = e.target.result; };
+      reader.readAsDataURL(file);
+    }
+  }
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (menuToggle) {
+    menuToggle.onclick = () => navLinks.classList.toggle('open');
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+</script>
+</body>
+</html>

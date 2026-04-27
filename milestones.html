@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NephroSense | Research Milestones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .milestone-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      text-align: center;
+      background: var(--green-light);
+      padding: 1.5rem;
+      border-radius: 20px;
+      min-width: 150px;
+    }
+    .stat-card .number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--green-primary);
+    }
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .timeline-entry {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .timeline-date {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+    }
+    .timeline-score {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .status-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .status-completed {
+      background: var(--green-light);
+      color: var(--green-primary);
+    }
+    .status-upcoming {
+      background: var(--gray-200);
+      color: var(--gray-600);
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">N</div>
+    <div class="logo-text">Nephro<span>Sense</span></div>
+  </a>
+  <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="domain.html">Domain</a></li>
+    <li><a href="milestones.html" class="active">Milestones</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="presentations.html">Presentations</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section style="padding-top: 100px;">
+    <div class="container">
+      <div class="section-label">Academic Timeline</div>
+      <h1 class="section-title">Research Milestones & Assessment</h1>
+      <p class="section-desc">Key evaluation points tracking the progress and assessment of the NephroSense research project.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <!-- Statistics Summary -->
+      <div class="milestone-stats">
+        <div class="stat-card"><div class="number">3</div><div>Completed</div></div>
+        <div class="stat-card"><div class="number">2</div><div>Upcoming</div></div>
+        <div class="stat-card"><div class="number">84.5%</div><div>Average Score</div></div>
+      </div>
+
+      <!-- Timeline List -->
+      <div class="timeline-list">
+        <div class="timeline-entry">
+          <div><strong>Project Proposal</strong><br><span class="timeline-date">20 January 2025</span></div>
+          <div><span class="timeline-score">87/100 (87%)</span></div>
+          <div><span class="status-badge status-completed">✓ Completed</span></div>
+          <div style="color: var(--gray-600); font-size: 0.85rem;">6% of total marks</div>
+        </div>
+
+        <div class="timeline-entry">
+          <div><strong>Progress Presentation I</strong><br><span class="timeline-date">28 February 2025</span></div>
+          <div><span class="timeline-score">83/100 (83%)</span></div>
+          <div><span class="status-badge status-completed">✓ Completed</span></div>
+          <div style="color: var(--gray-600); font-size: 0.85rem;">12% of total marks</div>
+        </div>
+
+        <div class="timeline-entry">
+          <div><strong>Progress Presentation II</strong><br><span class="timeline-date">25 March 2025</span></div>
+          <div><span class="timeline-score">79/100 (79%)</span></div>
+          <div><span class="status-badge status-completed">✓ Completed</span></div>
+          <div style="color: var(--gray-600); font-size: 0.85rem;">18% of total marks</div>
+        </div>
+
+        <div class="timeline-entry">
+          <div><strong>Final Assessment</strong><br><span class="timeline-date">10 May 2025</span></div>
+          <div><span class="timeline-score">— Pending —</span></div>
+          <div><span class="status-badge status-upcoming">⌛ Upcoming</span></div>
+          <div style="color: var(--gray-600); font-size: 0.85rem;">40% of total marks</div>
+        </div>
+
+        <div class="timeline-entry">
+          <div><strong>Viva Voce</strong><br><span class="timeline-date">20 May 2025</span></div>
+          <div><span class="timeline-score">— Pending —</span></div>
+          <div><span class="status-badge status-upcoming">⌛ Upcoming</span></div>
+          <div style="color: var(--gray-600); font-size: 0.85rem;">24% of total marks</div>
+        </div>
+      </div>
+
+      <!-- Component Completion Status -->
+      <div style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 1rem;">Component Development Status</h3>
+        <div class="features-grid">
+          <div class="feature-card"><div class="card-icon"><i class="fas fa-heartbeat"></i></div><h3>Lifestyle Prediction</h3><div class="status-badge status-completed">✓ Completed (89.5% Acc)</div><p style="margin-top: 0.5rem;">Random Forest model trained, rule engine implemented, API ready.</p></div>
+          <div class="feature-card"><div class="card-icon"><i class="fas fa-eye"></i></div><h3>Ultrasound Analysis</h3><div class="status-badge status-completed">✓ Completed (89.88% Acc)</div><p style="margin-top: 0.5rem;">U-Net segmentation, cortex thickness extraction, severity classification.</p></div>
+          <div class="feature-card"><div class="card-icon"><i class="fas fa-flask"></i></div><h3>Urine Strip Analysis</h3><div class="status-badge status-completed">✓ Completed (88.12% Acc)</div><p style="margin-top: 0.5rem;">YOLOv8 detection, dual-channel CNN, SVM classification.</p></div>
+          <div class="feature-card"><div class="card-icon"><i class="fas fa-handshake"></i></div><h3>Donor Matching</h3><div class="status-badge status-completed">✓ Completed (89.2% Acc)</div><p style="margin-top: 0.5rem;">Random Forest with SHAP, donor ranking algorithm.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 NephroSense Research Group | Sri Lanka Institute of Information Technology | Faculty of Computing</p>
+  <p style="margin-top: 0.5rem;">Domain | Milestones | Documents | Presentations | About Us | Contact Us</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (menuToggle) {
+    menuToggle.onclick = () => navLinks.classList.toggle('open');
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+</script>
+</body>
+</html>

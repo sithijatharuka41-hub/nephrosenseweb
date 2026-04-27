@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NephroSense | Presentations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pres-search {
+      margin-bottom: 2rem;
+    }
+    .pres-search input {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 40px;
+    }
+    .pres-type {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .pres-type.proposal { background: #e8f5e9; color: #0f7b3a; }
+    .pres-type.progress { background: #e3f2fd; color: #1565c0; }
+    .pres-type.final { background: #fff3e0; color: #e65100; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">N</div>
+    <div class="logo-text">Nephro<span>Sense</span></div>
+  </a>
+  <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="domain.html">Domain</a></li>
+    <li><a href="milestones.html">Milestones</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="presentations.html" class="active">Presentations</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section style="padding-top: 100px;">
+    <div class="container">
+      <div class="section-label">Slides</div>
+      <h1 class="section-title">Project Presentations</h1>
+      <p class="section-desc">All presentation slides — from the initial proposal to the final defence.</p>
+      <div class="available-count" style="margin-bottom: 1rem;">📊 3 of 4 presentations available</div>
+      
+      <div class="pres-search">
+        <input type="text" placeholder="Search presentations..." id="searchInput">
+      </div>
+
+      <div class="pres-grid" id="presGrid">
+        <div class="pres-card">
+          <div class="card-icon"><i class="fas fa-file-powerpoint"></i></div>
+          <span class="pres-type proposal">Proposal</span>
+          <h3>Proposal Presentation</h3>
+          <p>Proposal defense slides presenting the research problem, objectives, and planned methodology for NephroSense — covering lifestyle prediction, ultrasound analysis, urine strip detection, and donor matching components.</p>
+          <div class="doc-meta">20 January 2025 · 25 slides</div>
+          <button class="doc-action-btn" onclick="alert('Slides available upon request')" style="margin-top: 0.8rem;">📥 View Slides</button>
+        </div>
+        <div class="pres-card">
+          <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+          <span class="pres-type progress">Progress</span>
+          <h3>Progress Presentation I</h3>
+          <p>First progress presentation covering completed literature review, research gap analysis, system architecture design, and initial prototype demonstration for all four AI modules.</p>
+          <div class="doc-meta">25 February 2025 · 28 slides</div>
+          <button class="doc-action-btn" onclick="alert('Slides available upon request')" style="margin-top: 0.8rem;">📥 View Slides</button>
+        </div>
+        <div class="pres-card">
+          <div class="card-icon"><i class="fas fa-cogs"></i></div>
+          <span class="pres-type progress">Progress</span>
+          <h3>Progress Presentation II</h3>
+          <p>Second progress presentation showcasing core system implementation, live demonstration of all components, integration architecture, and preliminary evaluation results with accuracy metrics.</p>
+          <div class="doc-meta">22 March 2025 · 32 slides</div>
+          <button class="doc-action-btn" onclick="alert('Slides available upon request')" style="margin-top: 0.8rem;">📥 View Slides</button>
+        </div>
+        <div class="pres-card">
+          <div class="card-icon"><i class="fas fa-flag-checkered"></i></div>
+          <span class="pres-type final">Final</span>
+          <h3>Final Presentation</h3>
+          <p>Final defense presentation with complete results, performance evaluation, contributions to the field, and future work directions. Coming soon after final assessment.</p>
+          <div class="doc-meta">Expected: May 2025</div>
+          <button class="doc-action-btn" style="opacity:0.6;" disabled>⌛ Coming Soon</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 NephroSense Research Group | Sri Lanka Institute of Information Technology | Faculty of Computing</p>
+  <p style="margin-top: 0.5rem;">Domain | Milestones | Documents | Presentations | About Us | Contact Us</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (menuToggle) {
+    menuToggle.onclick = () => navLinks.classList.toggle('open');
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+  const searchInput = document.getElementById('searchInput');
+  const presCards = document.querySelectorAll('.pres-card');
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const term = this.value.toLowerCase();
+      presCards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(term) ? 'block' : 'none';
+      });
+    });
+  }
+</script>
+</body>
+</html>

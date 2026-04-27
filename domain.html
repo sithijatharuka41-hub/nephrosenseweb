@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NephroSense | Research Domain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .research-content {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .research-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--green-primary);
+    }
+    .research-content p {
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .research-content ul, .research-content ol {
+      margin-left: 1.5rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .research-content li {
+      margin-bottom: 0.5rem;
+    }
+    .gap-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .gap-table th, .gap-table td {
+      border: 1px solid var(--gray-200);
+      padding: 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .gap-table th {
+      background: var(--green-light);
+      color: var(--green-primary);
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .tech-item {
+      background: var(--green-light);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--green-primary);
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">N</div>
+    <div class="logo-text">Nephro<span>Sense</span></div>
+  </a>
+  <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="domain.html" class="active">Domain</a></li>
+    <li><a href="milestones.html">Milestones</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="presentations.html">Presentations</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section style="padding-top: 100px;">
+    <div class="container">
+      <div class="section-label">Research Domain</div>
+      <h1 class="section-title">A Comprehensive Exploration of CKD & AI Solutions</h1>
+      <p class="section-desc">From foundational literature and identified gaps to objectives, methodology, and a deep-dive into each AI component.</p>
+    </div>
+  </section>
+
+  <!-- Literature Survey -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="research-content">
+        <h3>01 — Literature Survey</h3>
+        <p><strong>Review of existing research and state-of-the-art approaches for CKD management using AI.</strong></p>
+        
+        <h4 style="margin: 1rem 0 0.5rem; color: var(--gray-800);">Chronic Kidney Disease in Sri Lanka</h4>
+        <p>Chronic Kidney Disease (CKD) is seen as a major and growing health problem in Sri Lanka, particularly affecting rural regions where access to advanced laboratory facilities is limited. The prevalence exceeds 20% in rural areas, with contributing factors such as contaminated water and limited healthcare access being identified [1]. Many people with CKD do not receive a diagnosis until late stages of the disease due in part to a lack of early symptoms and limited routine screening [2].</p>
+        
+        <h4 style="margin: 1rem 0 0.5rem; color: var(--gray-800);">Conventional Diagnostic Methods</h4>
+        <p>Common diagnostic methods rely heavily on biochemical indicators like estimated glomerular filtration rate (eGFR) and albumin-to-creatinine ratio (ACR), alongside radiologists' visual assessment of 2D ultrasound scans. Although this combined methodology is well-established, the human evaluation of ultrasound images remains prone to variability between different practitioners, dependence on operator skill, and considerable time consumption. These factors frequently result in inconsistent evaluations of anatomical features such as renal cortical thickness and parenchymal echogenicity.</p>
+        
+        <h4 style="margin: 1rem 0 0.5rem; color: var(--gray-800);">AI & Deep Learning in Medical Imaging</h4>
+        <p>Recent advances in artificial intelligence have introduced new methodologies for medical image interpretation. Li et al. (2022) created an automated process where a Mask R-CNN model is used to detect kidneys in ultrasound images. Important measurements such as kidney length and echogenicity ratio are obtained and fed to a ResNet18 CNN for classification. Deep convolutional neural networks, particularly the U-Net architecture, have shown exceptional capabilities in biological image segmentation tasks, enabling both contextual understanding and precise pixel-level classification even when trained on limited datasets.</p>
+        
+        <h4 style="margin: 1rem 0 0.5rem; color: var(--gray-800);">Smartphone-Based Urine Analysis</h4>
+        <p>Smartphone-based urine analysis techniques have been developed to improve the screening of CKD. RGB thresholding was used to attain 85% accuracy but was found to be sensitive to changes in illumination. MobileNetV2 achieved 91.3% accuracy under controlled conditions but decreased to 76.8% under low illumination. Dual illumination achieved consistent results with 93.5% accuracy but was found to be complex. Existing methods analyze fewer parameters (2-4 parameters), which were found to be moderately accurate.</p>
+        
+        <h4 style="margin: 1rem 0 0.5rem; color: var(--gray-800);">Machine Learning for Donor Matching</h4>
+        <p>Machine learning techniques have been explored to improve prediction accuracy in transplant decision support systems. Logistic regression and decision tree models incorporated blood type compatibility and limited HLA data, developing models with moderate accuracy but limited generalizability. Ensemble learning algorithms such as Random Forest and Gradient Boosting have demonstrated strong performance in medical prediction tasks due to their capability to model nonlinear interactions within clinical datasets.</p>
+        
+        <div class="tech-stack">
+          <span class="tech-item">U-Net (Ronneberger et al., 2015)</span>
+          <span class="tech-item">YOLOv8</span>
+          <span class="tech-item">Random Forest</span>
+          <span class="tech-item">XGBoost</span>
+          <span class="tech-item">Mask R-CNN</span>
+          <span class="tech-item">SHAP Explainability</span>
+        </div>
+      </div>
+
+      <!-- Research Gap -->
+      <div class="research-content">
+        <h3>02 — Research Gap</h3>
+        <p><strong>Identified gaps that this research addresses</strong></p>
+        
+        <table class="gap-table">
+          <thead>
+            <tr><th>Category</th><th>Description</th><th>Reference</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Context</strong></td><td>In low-resource environments such as rural Sri Lanka where CKD prevalence surpasses 20%, there is little emphasis on CKD lifestyle therapies. Current research ignores local health inequities in favor of Western populations.</td><td>[1], [12]</td></tr>
+            <tr><td><strong>Technology</strong></td><td>Insufficient use of explainable AI (such as SHAP) for trust and interpretability. Lack of machine learning models designed for stage-specific diet planning utilizing regional foods.</td><td>[6], [14]</td></tr>
+            <tr><td><strong>Integration</strong></td><td>Existing systems lack fully automated pipelines integrating segmentation, biomarker analysis, lifestyle monitoring, and donor matching into a single unified system. Most focus on isolated tasks without real-time interpretable outputs.</td><td>[3], [7]</td></tr>
+            <tr><td><strong>Cultural Relevance</strong></td><td>Lack of activity tracking validation and culturally specific advice that take into account Sri Lankan dietary patterns (such as rice and curry).</td><td>[6], [12]</td></tr>
+            <tr><td><strong>Validation</strong></td><td>Lack of frameworks to confirm how patient input and daily activity tracking affect CKD outcomes over time.</td><td>[7]</td></tr>
+          </tbody>
+        </table>
+        
+        <p><strong>Comparative Analysis:</strong> Existing systems provide only basic disease/non-disease classification. None offer: disease stage classification (1-5), health score with visual chart, and automated descriptive clinical reports simultaneously — which the proposed NephroSense system delivers.</p>
+      </div>
+
+      <!-- Research Problem -->
+      <div class="research-content">
+        <h3>03 — Research Problem</h3>
+        <p><strong>The core problem this project solves</strong></p>
+        <p>The inefficient management of lifestyle factors in Sri Lankan patients with Chronic Kidney Disease (CKD) accelerates the disease's course and leads to poor health outcomes. Over 20% of people in rural areas suffer from CKD as a result of environmental factors such as contaminated water and restricted access to healthcare, yet current approaches ignore the crucial impact that individualized nutrition and behaviors play.</p>
+        <p>Clinical evaluations including blood and urine tests offer diagnostic insights but do not provide personalized lifestyle recommendations. In a nation where healthcare disparities are severe, this lack of personalization is a major obstacle that puts rural patients at risk for worsening conditions.</p>
+        <p>The problem is made worse by general dietary recommendations that do not align with Sri Lankan traditional dietary customs, which include eating a lot of rice and curry. Because recommendations are often impractical or culturally irrelevant, this misalignment leads to low patient adherence.</p>
+        <p>Additionally, existing smartphone-based urine strip analysis technologies cannot function consistently under resource-constrained real-world scenarios. Current techniques examine only the strip image without considering surrounding circumstances that could skew results. By combining image data with contextual metadata (device type, capture time, lighting conditions), this research offers a novel alternative.</p>
+      </div>
+
+      <!-- Research Objectives -->
+      <div class="research-content">
+        <h3>04 — Research Objectives</h3>
+        <p><strong>Key goals driving this research</strong></p>
+        <h4 style="margin: 1rem 0 0.5rem;">Main Objective</h4>
+        <p>Develop a software-based system to monitor and advise CKD (stage 1-4) patients in Sri Lanka by integrating urine, blood, imaging and lifestyle data for early detection and personalized care.</p>
+        
+        <h4 style="margin: 1rem 0 0.5rem;">Specific Objectives</h4>
+        <ul>
+          <li><strong>Robust Image Segmentation:</strong> Develop a U-Net based deep learning model for precise segmentation of kidney anatomy from 2D ultrasound images, accurately identifying kidney boundary and cortex region.</li>
+          <li><strong>Accurate Biomarker Quantification:</strong> Create an automated framework for extracting key clinical biomarkers from segmented kidney regions — cortex thickness (min, max, average), echogenicity, and kidney shape ratios.</li>
+          <li><strong>Interpretable Health Assessment:</strong> Implement a kidney health scoring algorithm that synthesizes extracted biomarkers into a single easy-to-understand Kidney Health Score (0-100) mapped to CKD stages.</li>
+          <li><strong>Urine Strip Analysis:</strong> Develop a dual-channel CNN with YOLOv8 segmentation to analyze 8 urine biomarkers (protein, blood, glucose, pH, leukocytes) under variable lighting conditions.</li>
+          <li><strong>Lifestyle Prediction:</strong> Build Random Forest and XGBoost models to predict CKD progression risk and generate personalized culturally relevant diet, hydration, and exercise recommendations.</li>
+          <li><strong>Donor-Recipient Matching:</strong> Create an ML-based compatibility scoring system with SHAP explainability to rank donors and support transplant decisions.</li>
+        </ul>
+      </div>
+
+      <!-- Methodology -->
+      <div class="research-content">
+        <h3>05 — Methodology</h3>
+        <p><strong>Research approach, system design, and implementation methodology</strong></p>
+        
+        <h4 style="margin: 1rem 0 0.5rem;">Lifestyle Prediction System</h4>
+        <p>Data is collected from retrospective datasets including structured clinical records and self-reported lifestyle logs (diet, physical activity, hydration). A Random Forest classifier was selected for predictive model development due to its robustness to non-linear feature interactions and resistance to overfitting. The model classifies patients into Low, Moderate, or High risk categories. Outputs are fed into a rule-based recommendation engine containing predefined clinical guidelines and domain knowledge on CKD management, generating personalized recommendations for diet, fluid intake, and physical activity.</p>
+        
+        <h4 style="margin: 1rem 0 0.5rem;">Urine Strip Test Analysis System</h4>
+        <p>Images of urine test strips are resized to 640×640 pixels. White balancing correction based on the Grey World assumption in LAB color space minimizes lighting inconsistencies. YOLOv8n (lightweight object detection and segmentation model) localizes test pads. After segmentation, each pad region is converted to HSV color space. A dual-channel CNN processes HSV color features in one channel while the second channel incorporates contextual environmental information (ambient lighting conditions). SVM classifier was selected as the final model for classification between normal and abnormal readings.</p>
+        
+        <h4 style="margin: 1rem 0 0.5rem;">2D Ultrasound Image Analysis</h4>
+        <p>Images are validated based on brightness, texture, and clarity, then converted to grayscale and resized to 128×128 pixels. Speckle noise is reduced using median filtering. A U-Net CNN accurately distinguishes kidney region from background, producing a probability map converted to binary mask. Distance transform computes cortex thickness. CKD severity is determined using rule-based classification based on percentage of detected kidney area: Healthy (&lt;5%), Mild CKD (5-15%), Severe CKD (&gt;15%).</p>
+        
+        <h4 style="margin: 1rem 0 0.5rem;">Intelligent Kidney Donor-Recipient Matching</h4>
+        <p>Dataset includes donor and recipient age, blood group, BMI, dialysis duration, and detailed HLA typing. Data is divided into Training (80%), Validation (10%), and Testing (10%). Feature engineering derives compatibility indicators (age difference, BMI difference, HLA mismatch, antibody levels). Random Forest classifier achieved highest performance with 89.2% accuracy. SHAP explainable analysis provides feature attribution. Compatibility probability scores are categorized as High (CS≥0.75), Moderate (0.50-0.75), and Low (&lt;0.50).</p>
+      </div>
+
+      <!-- Technologies Used -->
+      <div class="research-content">
+        <h3>06 — Technologies Used</h3>
+        <p><strong>Full technology stack powering the research implementation</strong></p>
+        <div class="tech-stack">
+          <span class="tech-item">Python 3.8+</span>
+          <span class="tech-item">TensorFlow/Keras</span>
+          <span class="tech-item">PyTorch</span>
+          <span class="tech-item">Scikit-learn</span>
+          <span class="tech-item">OpenCV</span>
+          <span class="tech-item">YOLOv8 (Ultralytics)</span>
+          <span class="tech-item">U-Net Architecture</span>
+          <span class="tech-item">FastAPI / Flask</span>
+          <span class="tech-item">PostgreSQL</span>
+          <span class="tech-item">NumPy / Pandas</span>
+          <span class="tech-item">Random Forest</span>
+          <span class="tech-item">XGBoost</span>
+          <span class="tech-item">Logistic Regression</span>
+          <span class="tech-item">Gradient Boosting</span>
+          <span class="tech-item">SVM</span>
+          <span class="tech-item">KNN</span>
+          <span class="tech-item">SHAP Explainability</span>
+          <span class="tech-item">Docker</span>
+          <span class="tech-item">React (Frontend)</span>
+          <span class="tech-item">TensorFlow Serving</span>
+        </div>
+      </div>
+
+      <!-- Performance Summary -->
+      <div class="research-content">
+        <h3>07 — Performance Metrics Summary</h3>
+        <table class="gap-table">
+          <thead><tr><th>Component</th><th>Model</th><th>Accuracy</th><th>Additional Metrics</th></tr></thead>
+          <tbody>
+            <tr><td>Lifestyle Prediction</td><td>Random Forest</td><td>89.5%</td><td>Precision 0.88, Recall 0.87, F1 0.87</td></tr>
+            <tr><td>Lifestyle Prediction</td><td>XGBoost</td><td>87.8%</td><td>Precision 0.86, Recall 0.85</td></tr>
+            <tr><td>Lifestyle Prediction</td><td>Logistic Regression</td><td>84.2%</td><td>Precision 0.83, Recall 0.81</td></tr>
+            <tr><td>Urine Strip Analysis</td><td>SVM</td><td>88.12%</td><td>Train Acc 88.18%</td></tr>
+            <tr><td>Urine Strip Analysis</td><td>Random Forest</td><td>64%</td><td>Validation 64%</td></tr>
+            <tr><td>Donor Matching</td><td>Random Forest</td><td>89.2%</td><td>Precision 0.89, Recall 0.89</td></tr>
+            <tr><td>Donor Matching</td><td>Logistic Regression</td><td>88.4%</td><td>Precision 0.89, Recall 0.88</td></tr>
+            <tr><td>Donor Matching</td><td>SVM</td><td>88.4%</td><td>Precision 0.86, Recall 0.88</td></tr>
+            <tr><td>Ultrasound Analysis</td><td>U-Net</td><td>89.88%</td><td>Train Acc 89.95%</td></tr>
+            <tr><td>Ultrasound Analysis</td><td>FCN</td><td>87.32%</td><td>Train Acc 87.15%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 NephroSense Research Group | Sri Lanka Institute of Information Technology | Faculty of Computing</p>
+  <p style="margin-top: 0.5rem;">Domain | Milestones | Documents | Presentations | About Us | Contact Us</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (menuToggle) {
+    menuToggle.onclick = () => navLinks.classList.toggle('open');
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+</script>
+</body>
+</html>

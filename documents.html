@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NephroSense | Project Documents</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .search-bar {
+      margin-bottom: 2rem;
+    }
+    .search-bar input {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 40px;
+      font-size: 0.9rem;
+    }
+    .doc-meta {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 0.5rem;
+    }
+    .doc-actions {
+      margin-top: 0.8rem;
+      display: flex;
+      gap: 0.8rem;
+    }
+    .doc-action-btn {
+      background: none;
+      border: 1px solid var(--gray-300);
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .doc-action-btn:hover {
+      background: var(--green-light);
+      border-color: var(--green-primary);
+      color: var(--green-primary);
+    }
+    .available-count {
+      background: var(--green-light);
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">N</div>
+    <div class="logo-text">Nephro<span>Sense</span></div>
+  </a>
+  <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="domain.html">Domain</a></li>
+    <li><a href="milestones.html">Milestones</a></li>
+    <li><a href="documents.html" class="active">Documents</a></li>
+    <li><a href="presentations.html">Presentations</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section style="padding-top: 100px;">
+    <div class="container">
+      <div class="section-label">Repository</div>
+      <h1 class="section-title">Project Documents</h1>
+      <p class="section-desc">Access all research documents — individual proposal reports, component documentation, and the full research paper.</p>
+      <div class="available-count">📄 6 of 8 documents available</div>
+      
+      <div class="search-bar">
+        <input type="text" placeholder="Search documents..." id="searchInput">
+      </div>
+
+      <div class="doc-grid" id="docGrid">
+        <div class="doc-card">
+          <i class="fas fa-file-pdf" style="font-size: 1.8rem; color: var(--green-primary);"></i>
+          <div><strong>📄 Project Proposal (Main)</strong><div class="doc-meta">Comprehensive project proposal covering problem statement, objectives, methodology, and literature review. · 20 Jan 2025</div><div class="doc-actions"><button class="doc-action-btn" onclick="alert('Request drive link: nephrosense.research@gmail.com')">🔗 Request Link</button><button class="doc-action-btn" onclick="alert('View preview coming soon')">👁️ Preview</button></div></div>
+        </div>
+        <div class="doc-card">
+          <i class="fas fa-file-alt" style="font-size: 1.8rem; color: var(--green-primary);"></i>
+          <div><strong>📘 Lifestyle Component Report</strong><div class="doc-meta">Individual research proposal by Sithija Ranathunga (IT22005144). Covers Random Forest model, rule-based engine, and personalized recommendations. · 20 Jan 2025</div><div class="doc-actions"><button class="doc-action-btn" onclick="alert('Contact IT22005144 for access')">🔗 Request Link</button></div></div>
+        </div>
+        <div class="doc-card">
+          <i class="fas fa-eye" style="font-size: 1.8rem; color: var(--green-primary);"></i>
+          <div><strong>🩻 Ultrasound Component Report</strong><div class="doc-meta">Individual research proposal by Madinu V.G.A (IT22306418). Covers U-Net segmentation, cortex thickness extraction, and severity classification. · 20 Jan 2025</div><div class="doc-actions"><button class="doc-action-btn" onclick="alert('Contact IT22306418 for access')">🔗 Request Link</button></div></div>
+        </div>
+        <div class="doc-card">
+          <i class="fas fa-flask" style="font-size: 1.8rem; color: var(--green-primary);"></i>
+          <div><strong>🧪 Urine Strip Component Report</strong><div class="doc-meta">Individual research proposal by Shehani H.D.H (IT22913210). Covers YOLOv8 detection, dual-channel CNN, and SVM classification. · 20 Jan 2025</div><div class="doc-actions"><button class="doc-action-btn" onclick="alert('Contact IT22913210 for access')">🔗 Request Link</button></div></div>
+        </div>
+        <div class="doc-card">
+          <i class="fas fa-handshake" style="font-size: 1.8rem; color: var(--green-primary);"></i>
+          <div><strong>🔄 Donor Matching Component Report</strong><div class="doc-meta">Individual research proposal by Nirasha F (IT22886354). Covers Random Forest model, SHAP explainability, and donor ranking. · 20 Jan 2025</div><div class="doc-actions"><button class="doc-action-btn" onclick="alert('Contact IT22886354 for access')">🔗 Request Link</button></div></div>
+        </div>
+        <div class="doc-card">
+          <i class="fas fa-file-powerpoint" style="font-size: 1.8rem; color: var(--green-primary);"></i>
+          <div><strong>📊 Progress Report I — Group</strong><div class="doc-meta">First progress presentation report covering completed literature review, initial prototypes, and system architecture. · 26 Feb 2025</div><div class="doc-actions"><button class="doc-action-btn" onclick="alert('Available upon request')">🔗 Request Link</button></div></div>
+        </div>
+        <div class="doc-card">
+          <i class="fas fa-file-powerpoint" style="font-size: 1.8rem; color: var(--green-primary);"></i>
+          <div><strong>📈 Progress Report II — Group</strong><div class="doc-meta">Second progress report showcasing full integration, API endpoints, and preliminary evaluation results. · 25 Mar 2025</div><div class="doc-actions"><button class="doc-action-btn" onclick="alert('Available upon request')">🔗 Request Link</button></div></div>
+        </div>
+        <div class="doc-card">
+          <i class="fas fa-folder-open" style="font-size: 1.8rem; color: var(--gray-400);"></i>
+          <div><strong>📁 Final Research Paper</strong><div class="doc-meta">Comprehensive research paper documenting full system design, implementation, evaluation results, and contributions. · Coming Soon</div><div class="doc-actions"><button class="doc-action-btn" style="opacity:0.6;" disabled>⌛ Pending</button></div></div>
+        </div>
+      </div>
+
+      <div style="background: var(--green-light); padding: 1rem; border-radius: 12px; text-align: center; margin-top: 2rem;">
+        <i class="fas fa-link"></i> Main Drive Folder: email <strong>nephrosense.research@gmail.com</strong> for access to all documents.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 NephroSense Research Group | Sri Lanka Institute of Information Technology | Faculty of Computing</p>
+  <p style="margin-top: 0.5rem;">Domain | Milestones | Documents | Presentations | About Us | Contact Us</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (menuToggle) {
+    menuToggle.onclick = () => navLinks.classList.toggle('open');
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+  // Search functionality
+  const searchInput = document.getElementById('searchInput');
+  const docCards = document.querySelectorAll('.doc-card');
+  searchInput.addEventListener('input', function() {
+    const term = this.value.toLowerCase();
+    docCards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(term) ? 'flex' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
