@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>NephroSense | AI-Powered CKD Management System</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -12,7 +12,6 @@
 <nav>
   <a href="index.html" class="logo">
     <div class="logo-icon">
-      <!-- REPLACE 'nephrosense-logo.png' WITH YOUR ACTUAL LOGO FILE PATH -->
       <img src="src/logo.png" alt="NephroSense Logo" class="logo-img" onerror="this.parentElement.classList.add('fallback'); this.parentElement.innerHTML='N'">
     </div>
   </a>
@@ -32,7 +31,6 @@
   <section class="hero">
     <div class="container">
       <div class="hero-logo">
-        <!-- REPLACE 'nephrosense-logo.png' WITH YOUR ACTUAL LOGO FILE PATH -->
         <img src="src/logo.png" alt="NephroSense Logo" class="hero-logo-img" onerror="this.style.display='none'">
       </div>
       <div class="hero-badge">SLIIT Research Project 2025 | RP-25-26J-221</div>
@@ -43,8 +41,6 @@
         <a href="documents.html" class="btn-outline">View Documents</a>
         <a href="presentations.html" class="btn-outline">View Presentations</a>
       </div>
-
-    
 
       <!-- Stats -->
       <div class="hero-stats">
@@ -64,7 +60,7 @@
   </section>
 
   <!-- Features Section -->
-  <section style="background: var(--gray-50);">
+  <section style="background: transparent;">
     <div class="container">
       <div class="section-label">System Capabilities</div>
       <h2 class="section-title">Four Integrated AI Modules</h2>
@@ -99,35 +95,6 @@
 </footer>
 
 <script>
-  // Countdown timer (set target date to August 30, 2025 as example - adjust as needed)
-  function updateCountdown() {
-    const target = new Date(2025, 7, 30, 23, 59, 59); // August 30, 2025
-    const now = new Date();
-    const diff = target - now;
-
-    if (diff <= 0) {
-      document.getElementById('days').innerText = '0';
-      document.getElementById('hours').innerText = '0';
-      document.getElementById('minutes').innerText = '0';
-      document.getElementById('seconds').innerText = '0';
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (86400000)) / (3600000));
-    const minutes = Math.floor((diff % 3600000) / 60000);
-    const seconds = Math.floor((diff % 60000) / 1000);
-
-    document.getElementById('days').innerText = days;
-    document.getElementById('hours').innerText = hours;
-    document.getElementById('minutes').innerText = minutes;
-    document.getElementById('seconds').innerText = seconds;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  // Mobile menu toggle
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   if (menuToggle) {

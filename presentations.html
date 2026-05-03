@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>NephroSense | Presentations</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -17,6 +17,13 @@
       padding: 0.75rem 1rem;
       border: 1px solid var(--gray-200);
       border-radius: 40px;
+      background: white;
+      transition: all 0.3s ease;
+    }
+    .pres-search input:focus {
+      outline: none;
+      border-color: var(--green-primary);
+      box-shadow: 0 0 0 2px rgba(15, 123, 58, 0.1);
     }
     .pres-type {
       display: inline-block;
@@ -29,23 +36,28 @@
     .pres-type.proposal { background: #e8f5e9; color: #0f7b3a; }
     .pres-type.progress { background: #e3f2fd; color: #1565c0; }
     .pres-type.final { background: #fff3e0; color: #e65100; }
+    .pres-card {
+      transition: all 0.3s ease;
+    }
+    .pres-card:hover {
+      transform: translateY(-4px);
+    }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html" class="logo">
       <div class="logo-icon">
-        <!-- REPLACE 'nephrosense-logo.png' WITH YOUR ACTUAL LOGO FILE PATH -->
         <img src="src/logo.png" alt="NephroSense Logo" class="logo-img" onerror="this.parentElement.classList.add('fallback'); this.parentElement.innerHTML='N'">
       </div>
     </a>
     <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="domain.html">Domain</a></li>
       <li><a href="milestones.html">Milestones</a></li>
       <li><a href="documents.html">Documents</a></li>
-      <li><a href="presentations.html">Presentations</a></li>
+      <li><a href="presentations.html" class="active">Presentations</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
