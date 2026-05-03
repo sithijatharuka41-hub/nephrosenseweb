@@ -42,6 +42,102 @@
     .pres-card:hover {
       transform: translateY(-4px);
     }
+    .doc-action-btn {
+      background: none;
+      border: 1px solid var(--gray-300);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .doc-action-btn:hover {
+      background: var(--green-light);
+      border-color: var(--green-primary);
+      color: var(--green-primary);
+    }
+    .doc-action-btn.disabled, .doc-action-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .drive-link-note {
+      background: var(--gray-100);
+      border-left: 3px solid var(--green-primary);
+      padding: 0.5rem 0.8rem;
+      margin-top: 0.8rem;
+      font-size: 0.7rem;
+      color: var(--gray-600);
+      border-radius: 6px;
+    }
+    .drive-link-note code {
+      background: var(--gray-200);
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+    }
+    .available-count {
+      background: var(--green-light);
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--green-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: var(--green-primary);
+    }
+    .pres-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .pres-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .pres-card p {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    .doc-meta {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 0.5rem;
+    }
+    .pres-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .pres-card {
+        text-align: center;
+      }
+      .card-icon {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -76,39 +172,60 @@
       </div>
 
       <div class="pres-grid" id="presGrid">
+        <!-- Proposal Presentation -->
         <div class="pres-card">
           <div class="card-icon"><i class="fas fa-file-powerpoint"></i></div>
           <span class="pres-type proposal">Proposal</span>
           <h3>Proposal Presentation</h3>
           <p>Proposal defense slides presenting the research problem, objectives, and planned methodology for NephroSense — covering lifestyle prediction, ultrasound analysis, urine strip detection, and donor matching components.</p>
           <div class="doc-meta">20 January 2025 · 25 slides</div>
-          <button class="doc-action-btn" onclick="alert('Slides available upon request')" style="margin-top: 0.8rem;">📥 View Slides</button>
+          <!-- ========================================================== -->
+          <!-- TODO: PASTE YOUR GOOGLE DRIVE LINK FOR PROPOSAL SLIDES    -->
+          <!-- ========================================================== -->
+          <a href="https://drive.google.com/drive/folders/13t1pNd1lTbhMRGbbIBt7przqohbaFRjV?usp=sharing" class="doc-action-btn" id="proposal-view" target="_blank" style="margin-top: 0.8rem; display: inline-flex;">📥 View Slides</a>
+          
         </div>
+
+        <!-- Progress Presentation I -->
         <div class="pres-card">
           <div class="card-icon"><i class="fas fa-chart-line"></i></div>
           <span class="pres-type progress">Progress</span>
           <h3>Progress Presentation I</h3>
           <p>First progress presentation covering completed literature review, research gap analysis, system architecture design, and initial prototype demonstration for all four AI modules.</p>
           <div class="doc-meta">25 February 2025 · 28 slides</div>
-          <button class="doc-action-btn" onclick="alert('Slides available upon request')" style="margin-top: 0.8rem;">📥 View Slides</button>
+          <!-- ========================================================== -->
+          <!-- TODO: PASTE YOUR GOOGLE DRIVE LINK FOR PROGRESS I SLIDES -->
+          <!-- ========================================================== -->
+          <a href="https://drive.google.com/drive/folders/1Ovdp_Zz0aD2EP4AcWcvtBiHlN71O_42V?usp=sharing" class="doc-action-btn" id="progress1-view" target="_blank" style="margin-top: 0.8rem; display: inline-flex;">📥 View Slides</a>
+          
         </div>
+
+        <!-- Progress Presentation II -->
         <div class="pres-card">
           <div class="card-icon"><i class="fas fa-cogs"></i></div>
           <span class="pres-type progress">Progress</span>
           <h3>Progress Presentation II</h3>
           <p>Second progress presentation showcasing core system implementation, live demonstration of all components, integration architecture, and preliminary evaluation results with accuracy metrics.</p>
           <div class="doc-meta">22 March 2025 · 32 slides</div>
-          <button class="doc-action-btn" onclick="alert('Slides available upon request')" style="margin-top: 0.8rem;">📥 View Slides</button>
+          <!-- ========================================================== -->
+          <!-- TODO: PASTE YOUR GOOGLE DRIVE LINK FOR PROGRESS II SLIDES -->
+          <!-- ========================================================== -->
+          <a href="https://drive.google.com/drive/folders/1OwvRRHZPT31P75A5Zx9EZekokRlasgTt?usp=sharing" class="doc-action-btn" id="progress2-view" target="_blank" style="margin-top: 0.8rem; display: inline-flex;">📥 View Slides</a>
+          
         </div>
+
+        <!-- Final Presentation (Coming Soon) -->
         <div class="pres-card">
           <div class="card-icon"><i class="fas fa-flag-checkered"></i></div>
           <span class="pres-type final">Final</span>
           <h3>Final Presentation</h3>
           <p>Final defense presentation with complete results, performance evaluation, contributions to the field, and future work directions. Coming soon after final assessment.</p>
           <div class="doc-meta">Expected: May 2025</div>
-          <button class="doc-action-btn" style="opacity:0.6;" disabled>⌛ Coming Soon</button>
+          <button class="doc-action-btn" style="opacity:0.6; margin-top: 0.8rem;" disabled>⌛ Coming Soon</button>
         </div>
       </div>
+
+      
     </div>
   </section>
 </main>
@@ -119,12 +236,15 @@
 </footer>
 
 <script>
+  // Mobile menu toggle
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   if (menuToggle) {
     menuToggle.onclick = () => navLinks.classList.toggle('open');
     document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
   }
+  
+  // Search functionality
   const searchInput = document.getElementById('searchInput');
   const presCards = document.querySelectorAll('.pres-card');
   if (searchInput) {

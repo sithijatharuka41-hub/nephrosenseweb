@@ -61,13 +61,57 @@
       border-radius: 8px;
       font-family: inherit;
       background: white;
+      transition: border-color 0.2s;
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
       border-color: var(--green-primary);
+      box-shadow: 0 0 0 2px rgba(15, 123, 58, 0.1);
+    }
+    .btn-primary {
+      background: var(--green-primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+    .btn-primary:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .alert-message {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: var(--green-primary);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      z-index: 1000;
+      animation: slideIn 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .alert-message.error {
+      background: #dc2626;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
     @media (max-width: 768px) {
       .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .alert-message { top: 70px; right: 10px; left: 10px; text-align: center; }
     }
   </style>
 </head>
@@ -105,7 +149,7 @@
           
           <div class="contact-detail">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div><strong>Email</strong><br>nephrosense.research@gmail.com</div>
+            <div><strong>Email</strong><br>nephrosense25@gmail.com</div>
           </div>
           
           <div class="contact-detail">
@@ -124,21 +168,21 @@
           </div>
         </div>
 
-        <!-- Contact Form -->
+        <!-- Contact Form with Direct Email Sending -->
         <div class="contact-form">
           <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
-          <form onsubmit="alert('Thank you! Your message has been sent to the NephroSense research team. We will respond within 48 hours.'); return false;">
+          <form id="contactForm">
             <div class="form-group">
               <label>Full Name</label>
-              <input type="text" placeholder="Your full name" required>
+              <input type="text" id="userName" placeholder="Your full name" required>
             </div>
             <div class="form-group">
               <label>Email Address</label>
-              <input type="email" placeholder="your@email.com" required>
+              <input type="email" id="userEmail" placeholder="your@email.com" required>
             </div>
             <div class="form-group">
               <label>Subject</label>
-              <select>
+              <select id="userSubject" required>
                 <option value="">Select a topic...</option>
                 <option>Document / Resource Request</option>
                 <option>Research Collaboration</option>
@@ -149,10 +193,13 @@
             </div>
             <div class="form-group">
               <label>Message</label>
-              <textarea rows="5" placeholder="Write your message here (minimum 20 characters)..." required></textarea>
+              <textarea id="userMessage" rows="5" placeholder="Write your message here..." required></textarea>
             </div>
-            <button type="submit" class="btn-primary" style="width: 100%;">Send Message →</button>
+            <button type="submit" class="btn-primary" id="sendBtn">Send Message →</button>
           </form>
+          <p style="font-size: 0.7rem; color: var(--gray-500); margin-top: 1rem; text-align: center;">
+            <i class="fas fa-lock"></i> Your message will be sent directly to our research team
+          </p>
         </div>
       </div>
     </div>
@@ -164,13 +211,172 @@
   <p style="margin-top: 0.5rem;">Domain | Milestones | Documents | Presentations | About Us | Contact Us</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+  // Mobile menu toggle
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   if (menuToggle) {
     menuToggle.onclick = () => navLinks.classList.toggle('open');
     document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
   }
+
+  // Function to show alert message
+  function showAlert(message, isError = false) {
+    const existingAlert = document.querySelector('.alert-message');
+    if (existingAlert) existingAlert.remove();
+    
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert-message ${isError ? 'error' : ''}`;
+    alertDiv.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i> ${message}`;
+    document.body.appendChild(alertDiv);
+    
+    setTimeout(() => {
+      alertDiv.remove();
+    }, 5000);
+  }
+
+  // Initialize EmailJS with your Public Key
+  // ============================================================
+  // IMPORTANT: You need to set up EmailJS for this to work!
+  // Follow these steps:
+  // 
+  // STEP 1: Go to https://www.emailjs.com/ and sign up (free)
+  // STEP 2: Click "Add New Service" - select Gmail or Outlook
+  // STEP 3: Connect your Gmail account (nephrosense25@gmail.com)
+  // STEP 4: Go to "Email Templates" -> "Create New Template"
+  // STEP 5: Create a template with these variables:
+  //    {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+  // STEP 6: Go to "Account" -> "API Keys" to get your Public Key
+  // STEP 7: Replace the values below with your actual keys
+  // ============================================================
+  
+  // REPLACE THESE WITH YOUR ACTUAL EMAILJS CREDENTIALS:
+  const EMAILJS_PUBLIC_KEY = '_5AnpytdWMkj-f6oR';     // Get from EmailJS Account > API Keys
+  const EMAILJS_SERVICE_ID = 'service_jepvdtr';     // Get from EmailJS > Email Services
+  const EMAILJS_TEMPLATE_ID = 'template_s1xm3ot';   // Get from EmailJS > Email Templates
+  
+  // Initialize EmailJS
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+  
+  const contactForm = document.getElementById('contactForm');
+  const sendBtn = document.getElementById('sendBtn');
+  
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const userName = document.getElementById('userName').value.trim();
+    const userEmail = document.getElementById('userEmail').value.trim();
+    const userSubject = document.getElementById('userSubject').value;
+    const userMessage = document.getElementById('userMessage').value.trim();
+    
+    // Validation
+    if (!userName || !userEmail || !userSubject || !userMessage) {
+      showAlert('Please fill in all fields.', true);
+      return;
+    }
+    
+    if (userMessage.length < 10) {
+      showAlert('Please write a more detailed message (at least 10 characters).', true);
+      return;
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userEmail)) {
+      showAlert('Please enter a valid email address.', true);
+      return;
+    }
+    
+  
+    
+    // Show sending status
+    sendBtn.disabled = true;
+    sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    
+    try {
+      // Prepare template parameters
+      const templateParams = {
+  name: userName,
+  title: userSubject,
+  email: userEmail,
+  from_email: userEmail,
+  message: userMessage,
+  reply_to: userEmail
+};
+
+// Send team notification
+await emailjs.send(EMAILJS_SERVICE_ID, 'template_72wnjlb', templateParams); // your NEW template ID
+
+// Send auto-reply to user
+await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams); // existing auto-reply template
+
+showAlert('✓ Message sent successfully! We will respond within 48 hours.');
+contactForm.reset();
+      contactForm.reset();
+      
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      showAlert('Failed to send message. Please email us directly at nephrosense25@gmail.com', true);
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.innerHTML = 'Send Message →';
+    }
+  });
 </script>
+
+<!-- 
+  ============================================================
+  QUICK SETUP GUIDE FOR EMAILJS:
+  ============================================================
+  
+  1. Go to https://www.emailjs.com/
+  2. Click "Sign Up" (free account - 200 emails/month)
+  3. After login, go to "Email Services" → "Add New Service"
+  4. Choose Gmail (or Outlook) and connect your nephrosense25@gmail.com
+  5. Note down your SERVICE ID (e.g., service_abc123)
+  
+  6. Go to "Email Templates" → "Create New Template"
+  7. Create a template with:
+     
+     Subject: [NephroSense] {{subject}} from {{from_name}}
+     
+     Content (HTML):
+     <h2>New Contact Form Submission</h2>
+     <p><strong>Name:</strong> {{from_name}}</p>
+     <p><strong>Email:</strong> {{from_email}}</p>
+     <p><strong>Subject:</strong> {{subject}}</p>
+     <p><strong>Message:</strong></p>
+     <p>{{message}}</p>
+     <hr>
+     <p>Sent from NephroSense Contact Form</p>
+  
+  8. Note down your TEMPLATE ID (e.g., template_xyz789)
+  
+  9. Go to "Account" → "API Keys"
+  10. Copy your Public Key (e.g., 5cM8vR3k2LmNpQrS)
+  
+  11. Replace the values in the script above:
+      EMAILJS_PUBLIC_KEY = '5cM8vR3k2LmNpQrS'
+      EMAILJS_SERVICE_ID = 'service_abc123'
+      EMAILJS_TEMPLATE_ID = 'template_xyz789'
+  
+  12. Save and test!
+  
+  ============================================================
+  FREE ALTERNATIVE (No Sign Up Required):
+  ============================================================
+  
+  If you don't want to sign up for EmailJS, use Formspree:
+  
+  1. Go to https://formspree.io/
+  2. Sign up (free)
+  3. Create a new form
+  4. Set recipient email to nephrosense25@gmail.com
+  5. Get your FORM ID
+  6. Replace the form action with: 
+     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  
+  This will send emails directly without opening Outlook.
+-->
 </body>
 </html>
